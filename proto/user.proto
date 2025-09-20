@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "proto/user;user";
+
+service UserService {
+  rpc UserExistsById (UserExistsByIdRequest) returns (UserExistsByIdResponse);
+}
+
+message UserExistsByIdRequest {
+  int32 id = 1;
+}
+
+message UserExistsByIdResponse {
+  bool exists = 1;
+}
